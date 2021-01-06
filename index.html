@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conhecendo KnockoutJS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="knockout-app" class="card">
+      <header>Corrida Diária!</header>
+      <div class="card-section">
+        <h2>Olá, <span data-bind="text: userName"></span></h2>
+        <p>Quantos quilometros você correu hoje?</p>
+        <div class="counter-ui-container">
+          <button data-bind="click: decrease">-</button>
+          <span class="counter" data-bind="text: count">0</span>
+          <button data-bind="click: increase">+</button>
+        </div>
+        <p>Você é <span data-bind="text: userStatus"></span></p>
+      </div>
+      <footer>
+        <span>Bons Ventos!</span>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"
+      integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
