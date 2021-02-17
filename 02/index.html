@@ -18,7 +18,11 @@
             
             <button class="btn" data-bind="click: buttonAction">Ação</button>
 
-            
+            <br>
+            <ul data-bind="foreach: list">
+                <li data-bind="text: $data"></li>
+            </ul>    
+            <br>
         
         </div>
     </div>
