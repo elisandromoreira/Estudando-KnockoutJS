@@ -1,8 +1,9 @@
 function ViewModel () {
     var self = this;
 
-    self.labelText = "Label text";
-    self.inputValue = "Input value";
+    self.labelText = ko.observable("Label text");
+    self.inputValue = ko.observable("Input value");
+
     self.buttonAction = function () {
         console.log("clicked button");
     }
