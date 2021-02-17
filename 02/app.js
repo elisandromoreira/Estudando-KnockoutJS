@@ -9,7 +9,12 @@ function ViewModel () {
         self.list.splice(0, 0, 100);
     }
 
-    self.computed = ko.computed(function () {
+    /*
+    Quando não é modificado o valor de outro
+    é melhor utilizar o pure Computed Observable    
+    */
+     
+    self.computed = ko.pureComputed(function () {
         return `${self.labelText()} ${self.inputValue()}`
     })
 
