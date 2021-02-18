@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo Knockout</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous" />
+	<style>
+		.item-checked {
+			color: #ddd;
+			text-decoration: line-through;
+		}
+		.total{
+			padding:0 2px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<br><br>
+				<div class="panel panel-default">
+				<div class="panel-heading"><h4>knockout Bindings</h4></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="alert alert-warning">Mensagem</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- COL ESQUERDA -->
+						<div class="col-xs-6">
+							<strong>Lista de Itens</strong>
+							<ul class="list-group" data-bind="foreach: list">
+								<!-- Itens da lista -->
+  								<li class="list-group-item">
+									 <input type="checkbox"/>
+									  <!-- ko text: description --> <!-- /ko --> 
+								</li>
+							</ul>
+							<!-- <li class="list-group-item item-checked">
+								 <input type="checkbox" checked/>
+								 Descrição do Item
+							</li> -->
+							<div class="col-xs-12">
+								<div class="row">
+									<div class="col-xs-2 total">Total:</div>
+									<div class="col-xs-2 total" data-bind="text: list().length"></div>
+									<div class="col-xs-2 total text-center"><input type="checkbox" /> :</div>
+									<div class="col-xs-2 total">1</div>
+									<div class="col-xs-2 total text-center"><input type="checkbox" checked/> :</div>
+									<div class="col-xs-2 total">0</div>
+								</div>
+							</div>							
+						</div>
+						<!-- COL DIREITA -->
+						<div class="col-xs-6">
+							<div class="row">
+								<div class="col-xs-12"><label>Descrição do Item</label></div>
+								<div class="col-xs-12"><input type="text" class="form-control input-sm" data-bind="value: itemDescription" /></div>
+								<div class="col-xs-12"><br></div>
+								<div class="col-xs-12"><button class="btn btn-primary btn-block" data-bind="click: addItem">Incluir item</button></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="knockout-3.4.0.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
